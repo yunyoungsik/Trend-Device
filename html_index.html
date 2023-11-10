@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Device</title>
+
+    <link href="https://websfont.github.io/pyeongChangPeace/pyeongChangPeace.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-family: 'pyeongChangPeace';
+            font-weight: 400;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-family: 'pyeongChangPeace';
+            font-weight: 400;
+        }
+
+        #wrap {
+            display: flex;
+        }
+
+        #menu {}
+
+        #nav {
+            width: 300px;
+            padding: 20px;
+        }
+
+        #nav h3 {
+            margin: 20px 0 10px;
+        }
+
+        #nav li a {
+            border: 1px solid #000;
+            display: block;
+            padding: 10px;
+            margin-bottom: 5px;
+            transition: all 0.1s;
+        }
+
+        #nav li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        #nav .webd {
+            margin-top: 50px;
+        }
+
+        #nav .webd li {
+            width: 55px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        #main {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        #main iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu ul {
+            margin-bottom: 50px;
+        }
+
+        .menu ul li {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+        .menu ul li.active {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .contents>div {
+            display: none;
+        }
+
+        .contents>div:nth-child(2) {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <nav id="nav">
+            <div class="menu">
+                <ul>
+                    <li>FIGMA</li>
+                    <li class="active">HTML</li>
+                    <li>PHP</li>
+                </ul>
+            </div>
+            <div class="contents">
+                <div>
+                    <h3>메인</h3>
+                    <ul>
+                        <li><a href="index.html">메인 페이지</a></li>
+                    </ul>
+                </div>
+                <!-- //FIGMA -->
+
+                <div>
+                    <h3>메인</h3>
+                    <ul>
+                        <li><a href="html/main.html">메인 페이지</a></li>
+                    </ul>
+
+                    <h3>회원가입</h3>
+                    <ul>
+                        <li><a href="html/join.html">회원가입</a></li>
+                        <li><a href="html/joinSuccess.html">회원가입완료</a></li>
+                    </ul>
+
+                    <h3>로그인</h3>
+                    <ul>
+                        <li><a href="html/login.html">로그인</a></li>
+                        <li><a href="html/loginfail.html">로그인 실패</a></li>
+                        <li><a href="html/loginID_find.html">아이디 찾기</a></li>
+                        <li><a href="html/IDfind_success.html">아이디 찾기 완료</a></li>
+                        <li><a href="html/loginPW_find.html">비밀번호 찾기</a></li>
+                        <li><a href="html/PWfind_success.html">비밀번호 찾기 완료</a></li>
+                        <li><a href="html/PWreset.html">비밀번호 변경</a></li>
+                    </ul>
+
+                    <h3>제품</h3>
+                    <ul>
+                        <li><a href="html/phone.html">제품 목록</a></li>
+                        <li><a href="html/phoneView.html">제품 상세</a></li>
+                        <li><a href="html/compare.html">제품 비교하기</a></li>
+                        <li><a href="html/board.html">제품게시판</a></li>
+                    </ul>
+
+                    <h3>게시판</h3>
+                    <ul>
+                        <li><a href="html/board.html">공지사항</a></li>
+                        <li><a href="html/board.html">자유게시판</a></li>
+                        <li><a href="html/boardModify.html">게시물 수정</a></li>
+                    </ul>
+
+                    <h3>고객센터</h3>
+                    <ul>
+                        <li><a href="html/support.html">문의하기</a></li>
+                    </ul>
+                </div>
+                <!-- //HTML -->
+
+                <div>
+                    <h3>메인<a href="/TDsite/php/main/main.php">바로가기</a></h3>
+                    <ul>
+                        <li><a href="php/main/main.php">메인 페이지</a></li>
+                    </ul>
+
+                    <h3>상품페이지</h3>
+                    <ul>
+                        <li><a href="php/phone/samsung.php">상품페이지(삼성)</a></li>
+                        <li><a href="php/phone/apple.php">상품페이지(애플)</a></li>
+                        <li><a href="php/phone/compare.php">제품비교하기</a></li>
+                        <li><a href="http://trenddevice2023.dothome.co.kr/TDsite/php/board/boardCate.php?category=%EB%A6%AC%EB%B7%B0%EA%B2%8C%EC%8B%9C%ED%8C%90">제품리뷰</a></li>
+                        <li><a href="http://trenddevice2023.dothome.co.kr/TDsite/php/phone/phoneView.php?phoneId=23&category=%EC%83%81%ED%92%88%EA%B2%8C%EC%8B%9C%ED%8C%90">제품상세보기</a></li>
+                        <li><a href="php/phone/phoneWrite.php">제품 올리기</a></li>
+                        <!-- <li><a href="php/phone/">제품 수정하기</a></li>
+                        <li><a href="php/phone/">제품 삭제하기</a></li> -->
+                    </ul>
+
+                    <h3>회원가입</h3>
+                    <ul>
+                        <li><a href="php/join/join.php">회원 가입</a></li>
+                        <li><a href="php/join/joinSuccess.php">회원 가입 완료</a></li>
+                    </ul>
+
+                    <h3>로그인</h3>
+                    <ul>
+                        <li><a href="php/login/login.php">로그인</a></li>
+                        <li><a href="php/login/loginfail.php">로그인 실패</a></li>
+                        <li><a href="php/login/loginID_find.php">이메일 찾기</a></li>
+                        <li><a href="php/login/IDfind_success.php">이메일 찾기 성공</a></li>
+                        <li><a href="php/login/loginPW_find.php">비밀번호 찾기</a></li>
+                        <li><a href="php/login/PWfind_success.php">비밀번호 찾기 성공</a></li>
+                    </ul>
+                   
+                    <h3>마이페이지</h3>
+                    <ul>
+                        <li><a href="php/mypage/mypage.php">마이페이지</a></li>
+                        <li><a href="php/mypage/mypage.php">정보수정</a></li>
+                        <li><a href="php/mypage/mypage.php">비밀번호수정</a></li>
+                        <li><a href="php/mypage/mypage.php">회원탈퇴</a></li>
+                        <li><a href="php/wishlist/wishlist.php">위시리스트</a></li>
+                        <!-- <li><a href="php/board/">문의사항</a></li> -->
+                    </ul>
+
+
+                    <h3>커뮤니티</h3>
+                    <ul>
+                        <li><a href="php/notice/notice.php">공지사항</a></li>
+                        <li><a href="php/board/board.php">자유게시판</a></li>
+                        <li><a href="php/board/boardWrite.php">자유게시판 글쓰기</a></li>
+                        <li><a href="php/board/boardModify.php">자유게시판 글수정</a></li>
+                        <li><a href="php/board/boardDelete.php">자유게시판 글삭제</a></li>
+                    </ul>
+
+                    <h3>고객센터</h3>
+                    <ul>
+                        <li><a href="php/surpport/surpport.php">문의하기</a></li>
+                    </ul>
+                </div>
+                <!-- //PHP -->
+            </div>
+        </nav>
+
+        <main id="main">
+            <iframe src="index.html" frameborder="0"></iframe>
+        </main>
+
+        <script>
+            document.querySelectorAll("#nav ul li").forEach((li) => {
+                li.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    const href = li.querySelector("a").getAttribute("href");
+                    document.querySelector("#main iframe").src = href;
+                });
+            });
+
+            const menus = document.querySelectorAll(".menu ul li");
+            const contents = document.querySelectorAll(".contents > div");
+
+            menus.forEach((li, index) => {
+                li.addEventListener("click", () => {
+                    menus.forEach(menu => {
+                        menu.classList.remove("active")
+                    });
+                    li.classList.add("active");
+
+                    contents.forEach(content => {
+                        content.style.display = "none";
+                    });
+                    contents[index].style.display = "block";
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>

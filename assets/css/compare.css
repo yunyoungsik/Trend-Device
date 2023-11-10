@@ -1,0 +1,116 @@
+.compare__inner .btn__style3 {
+    width: 150px;
+    margin: 30px 0 70px;
+}
+
+.compare__inner {
+    margin-top: 60px;
+}
+
+/* compare__top */
+.compare__top {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.compare__top h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    word-break: keep-all;
+}
+
+.compare__top p {
+    font-weight: 600;
+}
+
+/* compare__bottom */
+.compare__bottom {
+    width: 100%;
+    display: flex;
+}
+
+.compare__bottom select {
+    width: 50%;
+    height: 60px;
+    font-size: 1rem;
+    font-weight: 900;
+    border: 1px solid var(--black600);
+    padding: 5px;
+}
+
+.compare__bottom img {
+    width: 70%;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.compare__left__top img,
+.compare__right__top img {
+    margin: 70px 0 70px;
+    width: 50%;
+    height: 50%;
+}
+
+.compare__left__bottom,
+.compare__right__bottom {
+    width: 100%;
+}
+
+.phoneOption {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.phoneOption li {
+    width: 50%;
+    min-height: 150px;
+    margin-bottom: 70px;
+    padding: 10px;
+    border: 1px solid var(--black400);
+    border-radius: 10px;
+    position: relative;
+    text-align: left;
+    word-break: keep-all;
+}
+
+.phoneOption img {
+    width: 30px;
+}
+
+.phoneOption li .text {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.phoneOption li .text p {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.phoneOption li .text span {
+    font-weight: 700;
+    color: var(--black400);
+}
+
+.phoneOption li img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+p.price {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.compare__left {
+    width: 50%;
+}
+
+.compare__right {
+    width: 50%;
+}

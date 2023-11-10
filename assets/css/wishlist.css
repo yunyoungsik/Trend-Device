@@ -1,0 +1,126 @@
+.wishList__inner {
+    margin-top: 160px;
+    min-height: 100vh;
+}
+
+.wishList__title h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.wishList__title p {
+    font-size: 1.2rem;
+    color: var(--black400);
+    margin-bottom: 110px;
+}
+
+.wishList__edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--black600);
+}
+
+.wishList__edit h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.wishList__edit p {
+    font-weight: 700;
+    color: var(--blue100);
+}
+
+.wishList__edit p:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+}
+
+.wishList__mylist {
+    width: 100%;
+    text-align: left;
+    margin-top: 50px;
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.wishList__mylist div {
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.mylist__img {
+    width: 400px;
+    height: 250px;
+    background-color: var(--black600);
+    position: relative;
+    border-radius: 10px;
+}
+
+.mylist__img .delete {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue100);
+}
+
+.mylist__img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 200px;
+}
+
+.mylist__showAll p {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.mylist__count {
+    color: var(--black500);
+}
+
+.mylist__info a {
+    color: var(--blue100);
+}
+
+.mylist__info a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+@media(max-width:1280px) {
+    .wishList__inner {
+        width: 85%;
+    }
+}
+
+@media(max-width:980px) {
+    .wishList__mylist {
+        display: block;
+    }
+
+    .wishList__mylist div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media(max-width:680px) {
+    .mylist__img {
+        background-color: var(--white);
+    }
+}
+
+@media(max-width:480px) {
+    .wishList__inner {
+        width: 100%;
+    }
+}

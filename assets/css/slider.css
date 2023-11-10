@@ -1,0 +1,241 @@
+#slider {
+    overflow: hidden;
+}
+
+.sliderWrap {
+    width: 400%;
+    display: flex;
+}
+
+.slider {
+    width: 100%;
+    height: 50vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media(max-width: 600px) {
+    .slider {
+        height: 150vw;
+    }
+}
+
+/* slider1 */
+
+.sliderWrap .slider.s1 {
+    position: relative;
+    color: var(--white);
+    background-image: url(../img/slide01-min.jpg);
+}
+
+.sliderWrap .slider.s1 .text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sliderWrap .slider.s1 .text strong {
+    font-size: 5vw;
+    font-weight: 700;
+}
+
+.sliderWrap .slider.s1 .text p {
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+
+.sliderWrap .slider.s1 .text i {
+    font-size: 1vw;
+    color: var(--black200);
+    margin-bottom: 1vw;
+
+}
+
+.sliderWrap .slider.s1 .text a {
+    font-size: 1vw;
+    color: var(--blue100);
+}
+
+@media(max-width: 600px) {
+    .sliderWrap .slider.s1 .text {
+        width: 100%;
+    }
+
+    .sliderWrap .slider.s1 .text strong {
+        font-size: 2rem;
+    }
+
+    .sliderWrap .slider.s1 .text p {
+        font-size: 1rem;
+    }
+
+    .sliderWrap .slider.s1 .text i {
+        font-size: 0.8rem;
+    }
+
+    .sliderWrap .slider.s1 .text a {
+        font-size: 0.8rem;
+    }
+}
+
+/* slider2 */
+
+.sliderWrap .slider.s2 {
+    color: var(--white);
+    background-image: url(../img/slider02-min.jpg);
+    position: relative;
+}
+
+.sliderWrap .slider.s2 .text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sliderWrap .slider.s2 .text span {
+    border: 1px solid var(--white);
+    font-size: 1vw;
+    padding: 1vw 4vw;
+    border-radius: 2vw;
+}
+
+.sliderWrap .slider.s2 .text strong {
+    font-size: 5vw;
+}
+
+.sliderWrap .slider.s2 .text p {
+    font-size: 1vw;
+    margin-bottom: 1vw;
+}
+
+.sliderWrap .slider.s2 .text i {
+    font-size: 1vw;
+    color: var(--black200);
+    margin-bottom: 2vw;
+}
+
+.sliderWrap .slider.s2 .text a {
+    font-size: 1vw;
+    color: var(--blue100);
+}
+
+@media(max-width: 600px) {
+    .sliderWrap .slider.s2 .text {
+        width: 100%;
+    }
+
+    .sliderWrap .slider.s2 .text span {
+        font-size: 0.8rem;
+        padding: 0.4rem 1.2rem;
+        border-radius: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .sliderWrap .slider.s2 .text strong {
+        font-size: 2rem;
+    }
+
+    .sliderWrap .slider.s2 .text p {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .sliderWrap .slider.s2 .text i {
+        font-size: 0.8rem;
+    }
+
+    .sliderWrap .slider.s2 .text a {
+        font-size: 0.8rem;
+    }
+}
+
+/* slider3 */
+
+.sliderWrap .slider.s3 {
+    position: relative;
+    color: #9E8243;
+    background-image: url(../img/slider03-min.jpg);
+}
+
+.sliderWrap .slider.s3 .text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sliderWrap .slider.s3 .text span {
+    font-size: 3vw;
+    font-weight: 800;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid #9E8243;
+}
+
+.sliderWrap .slider.s3 .text strong {
+    font-size: 3vw;
+    margin-top: 1vw;
+}
+
+.sliderWrap .slider.s3 .text p {
+    font-size: 1vw;
+    margin-bottom: 1vw;
+}
+
+.sliderWrap .slider.s3 .text i {
+    font-size: 1vw;
+    color: var(--black200);
+    margin-bottom: 1vw;
+}
+
+.sliderWrap .slider.s3 .text a {
+    font-size: 1vw;
+    color: #9E8243;
+}
+
+@media(max-width: 600px) {
+    .sliderWrap .slider.s3 .text {
+        width: 100%;
+    }
+
+    .sliderWrap .slider.s3 .text span {
+        font-size: 2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .sliderWrap .slider.s3 .text strong {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+    }
+
+    .sliderWrap .slider.s3 .text p {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .sliderWrap .slider.s3 .text i {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .sliderWrap .slider.s3 .text a {
+        font-size: 0.8rem;
+    }
+}

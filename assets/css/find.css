@@ -1,0 +1,164 @@
+/* findResult */
+.find__inner.container2 {
+    min-height: calc(100vh - 376px);
+}
+.find__result {
+    margin-bottom: 60px;
+}
+.find__result > .main__btn {
+    background-color: var(--black400);
+}
+.findResult__title {
+    margin: 100px 3rem 0;
+    border-bottom: 1px solid var(--black600);
+}
+.findResult__title h2 {
+    font-size: 1.25rem;
+    text-align: left;
+    padding-bottom: 30px;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+.find__resultBox {
+    width: 100%;
+    height: 260px;
+    margin: 85px auto 0;
+    background-color: var(--black900);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.find__resultBox img {
+    width: 80px;
+    position: absolute;
+    left: 25%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+}
+.find__resultBox p {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.find__result a {
+    width: 180px;
+    height: 50px;
+    margin: 1.25rem 1rem;
+}
+
+/* 암호 재설정 */
+.PWreset__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.PWreset__contents {
+    height: 300px;
+    padding-right: 3rem;
+    border-right: 1px solid var(--black200);
+}
+.PWreset__title {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+.PWreset__title h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1px;
+}
+.PWreset__form .btn__style3 {
+    display: flex;
+    margin: 0;
+}
+.PWreset__form fieldset div {
+    margin-bottom: 1.5rem;
+}
+
+.PWreset__contents .PWreset__form .input__style {
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem 1.4rem;
+    border: 1px solid var(--black500);
+    font-size: 1.2rem;
+    position: relative;
+    background-color: var(--white);
+}
+.PWreset__contents .PWreset__form .btn__style4 {
+    width: 30%;
+    display: block;
+    margin: 0;
+}
+
+.PWreset__support {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 300px;
+}
+.PWreset__support img {
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.PWreset__support p {
+    color: var(--black200);
+}
+.PWreset__support p:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+}
+.find__resultBox p i {
+    color: var(--blue100);
+    font-weight: 700;
+}
+
+.span__box a {
+    color: var(--blue100);
+}
+
+.button__box a:first-child {
+    background-color: var(--black400);
+}
+
+
+
+@media(max-width: 1200px){
+    .find__result {
+        width: 85%;
+    }
+    .PWreset__inner {
+        width: 80%;
+        display: block;
+        margin-top: 60px;
+    }
+    .PWreset__contents {
+        border: none;
+    }
+    .PWreset__support img {
+        display: none;
+    }
+    .PWreset__support p {
+        color: var(--blue100);
+    }
+}
+
+
+@media(max-width: 680px){
+    .find__result {
+        width: 70%;
+    }
+    .find__resultBox p {
+        font-size: 1rem;
+        margin: 0 2rem;
+        word-break: keep-all;
+    }
+    .find__result .login__btn {
+        margin-top: 0;
+    }
+    .findResult__title h2 {
+        text-align: center;
+    }
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Device</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="header__menu">
+                    <div class="header__ham">
+                        <div class="ham">
+                            <a href="#">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- //header__ham -->
+                </div>
+                <h1><a href="main.html">Trend Device</a></a></h1>
+                <div class="header__etc">
+                    <div class="header__search">
+                        <img src="../assets/img/glass.png" alt="검색">
+                    </div>
+                    <div class="header__user">
+                        <a href="join.html"><img src="../assets/img/user.png" alt="회원"></a>
+                    </div>
+                </div>
+                <!-- //header__etc -->
+                <div class="board__name">
+                    자유 게시판
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <nav id="nav">
+            <div class="container">
+                <ul>
+                    <li>
+                        스마트폰
+                        <ul class="submenu">
+                            <li><a href="phone.html">삼성</a></li>
+                            <li><a href="phone.html">애플</a></li>
+                            <li><a href="compare.html">제품비교하기</a></li>
+                            <li><a href="board.html">제품리뷰</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        커뮤니티
+                        <ul class="submenu">
+                            <li><a href="board.html">공지사항</a></li>
+                            <li><a href="board.html">자유게시판</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        고객센터
+                        <ul class="submenu">
+                            <li><a href="support.html">문의하기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //nav -->
+
+        <main id="main">
+            <div class="board__inner container">
+                <div class="board__top">
+                    <h2>자유 게시판</h2>
+                    <a href="boardWrite.html" class="bw__btn__style">글쓰기</a>
+                </div>
+                <div class="board__search">
+                    <form action="boardSearch.html" name="boardSearch" method="post">
+                        <fieldset>
+                            <legend class="blind">게시판 검색 영역</legend>
+                        </fieldset>
+                        <div class="search__bar">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z "
+                                    fill="#59595A" />
+                            </svg>
+                            <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="board__pages">
+                    <ul>
+                        <li class="prev"><a href="#">이전</a></li>
+                        <li class="next"><a href="#">다음</a></li>
+                    </ul>
+                </div>
+                <div class="board__table">
+                    <table>
+                        <!-- <colgroup>
+                            <col style="width: 5%">
+                            <col style="width: 5%">
+                            <col style="width: 5%">
+                            <col style="width: 10%">
+                            <col style="width: 10%">
+                            <col>
+                        </colgroup> -->
+                        <thead class="blind">
+                            <tr>
+                                <th>프로필 이미지</th>
+                                <th>게시글 제목</th>
+                                <th>등록일</th>
+                                <th>공감</th>
+                                <th>조회수</th>
+                                <th>작성자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" style="width: 5%"><img src="../assets/img/profile.png" alt="프로필 이미지">
+                                </td>
+                                <td colspan="5"><a href="boardView.html">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry.</a></td>
+                            </tr>
+                            <tr class="fG">
+                                <td>43분전</td>
+                                <td>공감 <em>0</em></td>
+                                <td>조회수 <em>1</em></td>
+                                <td>작성자 <em>김이름</em></td>
+                                <td style="width: 50%"></td>
+                            </tr>
+                            <!-- //1 -->
+                            <tr>
+                                <td rowspan="2" style="width: 5%"><img src="../assets/img/profile.png" alt="프로필 이미지">
+                                </td>
+                                <td colspan="5"><a href="boardView.html">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry.</a></td>
+                            </tr>
+                            <tr class="fG">
+                                <td>43분전</td>
+                                <td>공감 <em>0</em></td>
+                                <td>조회수 <em>1</em></td>
+                                <td>작성자 <em>김이름</em></td>
+                                <td style="width: 50%"></td>
+                            </tr>
+                            <!-- //1 -->
+                            <tr>
+                                <td rowspan="2" style="width: 5%"><img src="../assets/img/profile.png" alt="프로필 이미지">
+                                </td>
+                                <td colspan="5"><a href="boardView.html">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry.</a></td>
+                            </tr>
+                            <tr class="fG">
+                                <td>43분전</td>
+                                <td>공감 <em>0</em></td>
+                                <td>조회수 <em>1</em></td>
+                                <td>작성자 <em>김이름</em></td>
+                                <td style="width: 50%"></td>
+                            </tr>
+                            <!-- //1 -->
+                            <tr>
+                                <td rowspan="2" style="width: 5%"><img src="../assets/img/profile.png" alt="프로필 이미지">
+                                </td>
+                                <td colspan="5"><a href="boardView.html">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry.</a></td>
+                            </tr>
+                            <tr class="fG">
+                                <td>43분전</td>
+                                <td>공감 <em>0</em></td>
+                                <td>조회수 <em>1</em></td>
+                                <td>작성자 <em>김이름</em></td>
+                                <td style="width: 50%"></td>
+                            </tr>
+                            <!-- //1 -->
+                            <tr>
+                                <td rowspan="2" style="width: 5%"><img src="../assets/img/profile.png" alt="프로필 이미지">
+                                </td>
+                                <td colspan="5"><a href="boardView.html">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry.</a></td>
+                            </tr>
+                            <tr class="fG">
+                                <td>43분전</td>
+                                <td>공감 <em>0</em></td>
+                                <td>조회수 <em>1</em></td>
+                                <td>작성자 <em>김이름</em></td>
+                                <td style="width: 50%"></td>
+                            </tr>
+                            <!-- //1 -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="board__pages">
+                    <ul>
+                        <li class="prev"><a href="#">이전</a></li>
+                        <li class="next"><a href="#">다음</a></li>
+                    </ul>
+                </div>
+                <div class="rank">
+                    <div class="rTitle">
+                        <h2>상위참여자</h2>
+                        <div class="rCate">
+                            <h3 class="active">월간</h3>
+                            <h3>전체기간</h3>
+                        </div>
+                    </div>
+                    <div class="rBody">
+                        <div class="rBody__left">
+                            <div class="rBody__title">
+                                <span>회원</span>
+                                <span>포인트</span>
+                            </div>
+                            <div class="rUser">
+                                <div class="rImg">
+                                    <!-- <img src="../assets/img/iPhone15_Pro.png" alt=""> -->
+                                </div>
+                                <div class="rInfo">
+                                    <p><i>1.</i>이름</p>
+                                    <span>레벨<i>1</i></span>
+                                </div>
+                                <div class="rPoint">
+                                    55
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rBody__right">
+                            <div class="rBody__title">
+                                <span>회원</span>
+                                <span>포인트</span>
+                            </div>
+                            <div class="rUser">
+                                <div class="rImg">
+                                    이미지
+                                </div>
+                                <div class="rInfo">
+                                    <p><i>1.</i>이름</p>
+                                    <span>등급<i>운영자</i></span>
+                                </div>
+                                <div class="rPoint">
+                                    55
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- //main -->
+        <footer id="footer">
+            <div class="container">
+                <div class="footer__top">
+                    <h2>Trend Device</h2>
+                    <ul class="ft__list1">
+                        <li>트렌드 디바이스</li>
+                        <li>사업자등록번호:123-123-12345</li>
+                        <li>통신판매업 신고:2000-경기안산-0111</li>
+                    </ul>
+                    <ul class="ft__list2">
+                        <li>사업장 주소:경기도 안산시 단원구 고잔2길 45 코스모프라자 6층</li>
+                        <li>대표번호:00-1234-1234</li>
+                        <li>문의전화:00-1234-5678</li>
+                    </ul>
+                </div>
+                <div class="footer__bottom">
+                    <div class="fb__left">
+                        <p>
+                            본 사이트의 컨텐츠는 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.
+                        </p>
+                        <ul>
+                            <li>Copyright © 2023 TrendDevice. All Rights Reserved.</li>
+                            <li>사이트맵</li>
+                            <li>개인정보처리방침</li>
+                            <li>고객센터</li>
+                            <li>회원탈퇴</li>
+                        </ul>
+                    </div>
+                    <div class="fb__right">
+                        <span>
+                            <img src="../assets/img/instargram__icon.png" alt="인스타그램">
+                        </span>
+                        <span>
+                            <img src="../assets/img/facebook__icon.png" alt="인스타그램">
+                        </span>
+                        <span>
+                            <img src="../assets/img/github__icon.png" alt="인스타그램">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+
+    <!-- script -->
+    <script src="../assets/script/script.js"></script>
+    <script>
+        document.querySelector("#bRank").addEventListener("click", function () {
+            document.querySelector("#bRank").classList.add("active");
+            document.querySelector(".rBody__left.cL").classList.add("blind");
+            document.querySelector(".rBody__right.cR").classList.add("blind");
+
+            document.querySelector("#cRank").classList.remove("active");
+            document.querySelector(".rBody__left.bL").classList.remove("blind");
+            document.querySelector(".rBody__right.bR").classList.remove("blind");
+        });
+
+        document.querySelector("#cRank").addEventListener("click", function () {
+            document.querySelector("#cRank").classList.add("active");
+            document.querySelector(".rBody__left.bL").classList.add("blind");
+            document.querySelector(".rBody__right.bR").classList.add("blind");
+
+            document.querySelector("#bRank").classList.remove("active");
+            document.querySelector(".rBody__left.cL").classList.remove("blind");
+            document.querySelector(".rBody__right.cR").classList.remove("blind");
+        });
+    </script>
+</body>
+
+</html>
