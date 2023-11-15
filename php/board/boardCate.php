@@ -215,11 +215,13 @@
     
             echo '<div class="rUser">';
             echo '<div class="rImg">';
+            echo '<div class="img">';
             if (!empty($imgInfo['youImgFile'])) {
                 echo "<img src='../../assets/memberimg/{$imgInfo['youImgFile']}' alt='{$imgInfo['youName']}의 프로필'>";
             } else {
                 echo "<img src='../../assets/memberimg/icon__profile.png' alt='{$info['fAuthor']}의 프로필'>";
             }
+            echo '</div>';
             echo '</div>';
             echo '<div class="rInfo">';
             echo "<p><i>{$rank}.</i>{$imgInfo['youName']}</p>"; // 등수를 표시합니다.
@@ -263,11 +265,13 @@
     
             echo '<div class="rUser">';
             echo '<div class="rImg">';
+            echo '<div class="img">';
             if (!empty($imgInfo['youImgFile'])) {
                 echo "<img src='../../assets/memberimg/{$imgInfo['youImgFile']}' alt='{$imgInfo['youName']}의 프로필'>";
             } else {
                 echo "<img src='../../assets/memberimg/icon__profile.png' alt='{$info['fAuthor']}의 프로필'>";
             }
+            echo '</div>';
             echo '</div>';
             echo '<div class="rInfo">';
             echo "<p><i>{$rank}.</i>{$imgInfo['youName']}</p>"; // 등수를 표시합니다.
@@ -312,11 +316,13 @@
 
             echo '<div class="rUser">';
             echo '<div class="rImg">';
+            echo '<div class="img">';
             if (!empty($imgInfo['youImgFile'])) {
                 echo "<img src='../../assets/memberimg/{$imgInfo['youImgFile']}' alt='{$imgInfo['youName']}의 프로필'>";
             } else {
                 echo "<img src='../../assets/memberimg/icon__profile.png' alt='{$imgInfo['youName']}의 프로필'>";
             }
+            echo '</div>';
             echo '</div>';
             echo '<div class="rInfo">';
             echo "<p><i>{$rank}.</i>{$imgInfo['youName']}</p>";
@@ -360,11 +366,13 @@
 
             echo '<div class="rUser">';
             echo '<div class="rImg">';
+            echo '<div class="img">';
             if (!empty($imgInfo['youImgFile'])) {
                 echo "<img src='../../assets/memberimg/{$imgInfo['youImgFile']}' alt='{$imgInfo['youName']}의 프로필'>";
             } else {
                 echo "<img src='../../assets/memberimg/icon__profile.png' alt='{$imgInfo['youName']}의 프로필'>";
             }
+            echo '</div>';
             echo '</div>';
             echo '<div class="rInfo">';
             echo "<p><i>{$rank}.</i>{$imgInfo['youName']}</p>";

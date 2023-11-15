@@ -31,6 +31,15 @@
 
     // 현재 시간과의 차이 계산
     $currentTimestamp = time(); // 현재 시간의 타임스탬프
+
+    // 폰테이블 정보
+    $phoneSql = "SELECT * FROM Phone WHERE pDelete = 1";
+    $phoneResult = $connect -> query($phoneSql);
+    $phoneInfo = $phoneResult -> fetch_all(MYSQLI_ASSOC);
+
+    $sql = "SELECT fCategory FROM FBoard WHERE fCategory != '$category' AND fCategory != '보류'";
+    $result = $connect -> query($sql);
+    $category2 = $result -> fetch_array(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -70,15 +79,41 @@
         $info = $result -> fetch_array(MYSQLI_ASSOC);
 
         echo "<div style='display:none'><label for='boardId'>번호</label><input type='text' id='boardId' name='boardId' class='input__style' value='".$info['blogId']."'></div>";
-        echo "<div class='bw__category'><label for='boardCategory'>카테고리</label><select name='boardCategory' id='boardCategory'><option value='".$category."'>".$category."</option><option value='".$category2['fCategory']."'>".$category2['fCategory']."</option></select></div>";
-        echo "<div class='bw__boardTitle'><label for='boardTitle'>제목</label><div class='bw__boardTitle__input'><input type='text' id='boardTitle' name='boardTitle' class='input__style' value='".$info['fTitle']."'></div></div>";
+        echo "<div class='bw__category blind'><label for='boardCategory'>카테고리</label><select name='boardCategory' id='boardCategory'><option value='".$category."'>".$category."</option><option value='".$category2['fCategory']."'>".$category2['fCategory']."</option></select></div>"; 
+?>
+    <div class="bw__boardTitle">
+        <label for="boardTitle">제목</label>
+<?php 
+    if($category === "토론게시판"){?>
+    <div class="bw__boardTitle__input bN">
+        <select name="boardTitle" id="boardTitle">
+            <?php foreach($phoneResult as $phone){ ?>
+                <option value="<?=$phone['pTitle']?>"><?=$phone['pTitle']?></option>
+            <?php } ?>
+        </select>
+        <div>VS</div>
+        <select name="boardTitle2" id="boardTitle2">
+            <?php foreach($phoneResult as $phone){ ?>
+                <option value="<?=$phone['pTitle']?>"><?=$phone['pTitle']?></option>
+            <?php } ?>
+        </select>
+    </div>
+    <?php } else { ?>
+        <div class="bw__boardTitle__input">
+            <input type="text" id="boardTitle" name="boardTitle" class="input__style">
+        </div>
+    <?php }
+?>
+    </div>
+
+<?php
         echo "<div class='bw__boardCont'><label for='boardContents'>내용</label><div class='bw__textarea'><textarea name='boardContents' id='boardContents' rows='20' class='input__style'>".$info['fContents']."</textarea></div></div>";
         echo "<div class='bw__boardFile'><label for='boardFile'>파일</label><input type='file' id='boardFile' name='boardFile'><p>* jpg, gif, png, webp 파일만 넣을 수 있습니다. 이미지 용량은 1MB입니다.</p></div>";
     }
 ?>
                             <div class="board__btns">
                                 <button type="submit" class="btn__style save">수정하기</button>
-                                <a href="board.php" class="btn__style2">목록</a>
+                                <a href="boardCate.php?category=<?=$category?>" class="btn__style2">목록</a>
                             </div>
                         </fieldset>
                     </form>

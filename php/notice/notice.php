@@ -116,7 +116,7 @@
                         </thead>
                         <tbody>
 <?php 
-    $sql = "SELECT blogId, nTitle, nContents, nCategory, nAuthor, nRegTime, nView, nLike FROM NBoard WHERE nDelete = 1 ORDER BY blogId DESC LIMIT {$viewLimit}, {$viewNum}";
+    $sql = "SELECT * FROM NBoard WHERE nDelete = 1 ORDER BY blogId DESC LIMIT {$viewLimit}, {$viewNum}";
     $result = $connect -> query($sql);
 
     if($sql){
@@ -125,9 +125,10 @@
         if($count > 0){
             for($i=0; $i<$count; $i++){
                 $info = $result -> fetch_array(MYSQLI_ASSOC);
+                $memberId = $info['$memberID'];
 
                  // 프로필 이미지 가져오기
-                 $imgSql = "SELECT youImgFile FROM tdMembers WHERE memberID = '$memberID'";
+                 $imgSql = "SELECT youImgFile FROM tdMembers WHERE memberID = '$memberId'";
                  $imgResult = $connect->query($imgSql);
                  $imgInfo = $imgResult->fetch_array(MYSQLI_ASSOC);
 

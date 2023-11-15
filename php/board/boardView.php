@@ -31,7 +31,6 @@
     echo "let commentPass = '$commentPass';"; 
     echo "</script>";
 
-
     // 전체 게시물 수 가져오기
     $pageSql = "SELECT * FROM FBoard WHERE fDelete = 1 AND fCategory = '$category'";
     $pageResult = $connect -> query($pageSql);
@@ -99,6 +98,9 @@
         }
     }
 
+    // 게시글 작성자와 로그인한 사용자를 비교하여 해당 버튼을 출력하거나 숨깁니다.
+    $isPostOwner = ($AmemberID === $memberId);
+
     // echo "<pre>";
     // var_dump($lastBoardInfo);
     // echo "</pre>";
@@ -160,7 +162,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="trDay" colspan="3">게시일 <em>2023. 10. 11 오전 02:53</em></td>
+                                <td class="trDay" colspan="3">게시일 <em>
+<?php
+    $timestamp = $boardInfo['fRegTime'];
+    $am_pm = date('a', $timestamp);
+    $ampm_str = ($am_pm == 'am') ? '오전' : '오후';
+    echo date('Y. m. d', $timestamp) . ' ' . $ampm_str . ' ' . date('g:i', $timestamp);
+?>
+                                </em></td>
                             </tr>
                         </tbody>
                     </table>
@@ -168,8 +177,10 @@
                 <div class="board__btns">
                     <button type="submit" id="LikeButton" class="btn__style">공감</button>
                     <a href="boardCate.php?category=<?=$category?>" class="btn__style2">목록</a>
-                    <a href="boardModify.php?blogId=<?=$_GET['blogId']?>&category=<?=$category?>" class="btn__style2">수정하기</a>
-                    <a href="boardDelete.php?blogId=<?=$_GET['blogId']?>&category=<?=$category?>" class="btn__style2" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+<?php if ($isPostOwner) { ?>
+    <a href="boardModify.php?blogId=<?=$_GET['blogId']?>&category=<?=$category?>" class="btn__style2">수정하기</a>
+    <a href="boardDelete.php?blogId=<?=$_GET['blogId']?>&category=<?=$category?>" class="btn__style2" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+<?php } ?>
                 </div>
 
                 <section id="boardComment" class="board__comment">

@@ -13,6 +13,7 @@
         $boardId = $_POST['boardId'];
         $boardCategory = $_POST['boardCategory'];
         $boardTitle = $_POST['boardTitle'];
+        $boardTitle2 = $_POST['boardTitle2'];
         $boardContents = $_POST['boardContents'];
         $memberID = $_SESSION['memberID'];
 
@@ -29,26 +30,50 @@
 
 
         // 이미지 수정
-        if($boardImgType){
-            $fileTypeExtension = explode("/", $boardImgType);
-            $fileType = $fileTypeExtension[0];  //image
-            $fileExtension = $fileTypeExtension[1];  //jpeg
-    
-            // 이미지 타입 확인
-            if($fileType === "image"){
-                if($fileExtension === "jpg" || $fileExtension === "jpeg" || $fileExtension === "png" || $fileExtension === "gif" || $fileExtension === "webp"){
-                    $boardImgDir = "../../assets/boardimg/";
-                    $boardImgName = "Img_".time().rand(1, 99999)."."."{$fileExtension}";
-                    $sql = "UPDATE FBoard SET fTitle = '$boardTitle', fContents = '$boardContents', fCategory = '$boardCategory', fImgFile = '$boardImgName', fImgSize = '$boardImgSize' WHERE blogId = '$boardId'";
-                    $result = move_uploaded_file($boardImgTmp, $boardImgDir.$boardImgName);
-                } else {
-                    echo "<script>alert('이미지 파일 형식이 아닙니다.')</script>";
+        if($boardTitle2){
+            if($boardImgType){
+                $fileTypeExtension = explode("/", $boardImgType);
+                $fileType = $fileTypeExtension[0];  //image
+                $fileExtension = $fileTypeExtension[1];  //jpeg
+        
+                // 이미지 타입 확인
+                if($fileType === "image"){
+                    if($fileExtension === "jpg" || $fileExtension === "jpeg" || $fileExtension === "png" || $fileExtension === "gif" || $fileExtension === "webp"){
+                        $boardImgDir = "../../assets/boardimg/";
+                        $boardImgName = "Img_".time().rand(1, 99999)."."."{$fileExtension}";
+                        $sql = "UPDATE FBoard SET fTitle = '$boardTitle VS $boardTitle2', fContents = '$boardContents', fCategory = '$boardCategory', fImgFile = '$boardImgName', fImgSize = '$boardImgSize' WHERE blogId = '$boardId'";
+                        $result = move_uploaded_file($boardImgTmp, $boardImgDir.$boardImgName);
+                    } else {
+                        echo "<script>alert('이미지 파일 형식이 아닙니다.')</script>";
+                    }
+                    echo "<script>alert('이미지 파일 형식이 맞습니다.')</script>";
                 }
-                echo "<script>alert('이미지 파일 형식이 맞습니다.')</script>";
+            } else {
+                $sql = "UPDATE FBoard SET fTitle = '$boardTitle VS $boardTitle2', fContents = '$boardContents', fCategory = '$boardCategory' WHERE blogId = '$boardId'";
             }
         } else {
-            $sql = "UPDATE FBoard SET fTitle = '$boardTitle', fContents = '$boardContents', fCategory = '$boardCategory' WHERE blogId = '$boardId'";
+            if($boardImgType){
+                $fileTypeExtension = explode("/", $boardImgType);
+                $fileType = $fileTypeExtension[0];  //image
+                $fileExtension = $fileTypeExtension[1];  //jpeg
+        
+                // 이미지 타입 확인
+                if($fileType === "image"){
+                    if($fileExtension === "jpg" || $fileExtension === "jpeg" || $fileExtension === "png" || $fileExtension === "gif" || $fileExtension === "webp"){
+                        $boardImgDir = "../../assets/boardimg/";
+                        $boardImgName = "Img_".time().rand(1, 99999)."."."{$fileExtension}";
+                        $sql = "UPDATE FBoard SET fTitle = '$boardTitle', fContents = '$boardContents', fCategory = '$boardCategory', fImgFile = '$boardImgName', fImgSize = '$boardImgSize' WHERE blogId = '$boardId'";
+                        $result = move_uploaded_file($boardImgTmp, $boardImgDir.$boardImgName);
+                    } else {
+                        echo "<script>alert('이미지 파일 형식이 아닙니다.')</script>";
+                    }
+                    echo "<script>alert('이미지 파일 형식이 맞습니다.')</script>";
+                }
+            } else {
+                $sql = "UPDATE FBoard SET fTitle = '$boardTitle', fContents = '$boardContents', fCategory = '$boardCategory' WHERE blogId = '$boardId'";
+            }
         }
+        
     
         // 이미지 사이즈 확인
         if($boardImgSize > 10000000){

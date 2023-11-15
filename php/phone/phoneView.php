@@ -67,7 +67,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="<?=$phoneInfo['pLink']?>" target="blank" class="btn__style3">바로가기</a>
+                        <a href="<?=$phoneInfo['pLink']?>" target="_blank" class="btn__style3">바로가기</a>
                         <button type="submit" id="LikeButton">
                             <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 5.72c-2.624-4.517-10-3.198-10 2.461 0 3.725 4.345 7.727 9.303 12.54.194.189.446.283.697.283s.503-.094.697-.283c4.977-4.831 9.303-8.814 9.303-12.54 0-5.678-7.396-6.944-10-2.461z" fill-rule="nonzero"/></svg>
                         </button>
@@ -173,9 +173,9 @@
         // 공감버튼
         var likeStatus = '<?php echo $likeStatus; ?>';
         if (likeStatus === "liked") {
-            $("#LikeButton > svg").css("fill", "var(--black400");
-        } else {
             $("#LikeButton > svg").css("fill", "var(--red)");
+        } else {
+            $("#LikeButton > svg").css("fill", "var(--black400");
         }
 
         $(function(){
@@ -194,7 +194,7 @@
                     success: function(data){
                         console.log(data);
                         if(data.info === "success"){
-                            $("#LikeButton > svg").css("fill", "var(--black400)");
+                            $("#LikeButton > svg").css("fill", "var(--red)");
                         } else if(data.info === "alreadyLiked"){
                             alert("이미 위시리스트에 있습니다.");
                         } else if(data.info === "loginRequired"){

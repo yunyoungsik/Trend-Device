@@ -9,7 +9,12 @@
         Header("Location: boardCate.php");
     }
 
-    $sql = "SELECT fCategory FROM FBoard WHERE fCategory <> '$category' AND fCategory <> '보류'";
+    // 폰테이블 정보
+    $phoneSql = "SELECT * FROM Phone WHERE pDelete = 1";
+    $phoneResult = $connect -> query($phoneSql);
+    $phoneInfo = $phoneResult -> fetch_all(MYSQLI_ASSOC);
+
+    $sql = "SELECT fCategory FROM FBoard WHERE fCategory != '$category' AND fCategory != '보류'";
     $result = $connect -> query($sql);
     $category2 = $result -> fetch_array(MYSQLI_ASSOC);
 ?>
@@ -46,9 +51,27 @@
                             </div>
                             <div class="bw__boardTitle">
                                 <label for="boardTitle">제목</label>
-                                <div class="bw__boardTitle__input">
-                                    <input type="text" id="boardTitle" name="boardTitle" class="input__style">
-                                </div>
+<?php 
+    if($category === "토론게시판"){?>
+    <div class="bw__boardTitle__input bN">
+        <select name="boardTitle" id="boardTitle">
+            <?php foreach($phoneResult as $phone){ ?>
+                <option value="<?=$phone['pTitle']?>"><?=$phone['pTitle']?></option>
+            <?php } ?>
+        </select>
+        <div>VS</div>
+        <select name="boardTitle2" id="boardTitle2">
+            <?php foreach($phoneResult as $phone){ ?>
+                <option value="<?=$phone['pTitle']?>"><?=$phone['pTitle']?></option>
+            <?php } ?>
+        </select>
+    </div>
+    <?php } else { ?>
+        <div class="bw__boardTitle__input">
+            <input type="text" id="boardTitle" name="boardTitle" class="input__style">
+        </div>
+    <?php }
+?>
                             </div>
                             <div class="bw__boardCont">
                                 <label for="boardContents">내용</label>
@@ -63,7 +86,7 @@
                             </div>
                             <div class="board__btns">
                                 <button type="submit" class="btn__style save">저장하기</button>
-                                <a href="board.php" class="btn__style2">목록</a>
+                                <a href="boardCate.php?category=<?=$category?>" class="btn__style2">목록</a>
                             </div>
                         </fieldset>
                     </form>

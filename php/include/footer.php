@@ -20,18 +20,16 @@
                 </p>
                 <ul>
                     <li>Copyright © 2023 TrendDevice. All Rights Reserved.</li>
-                    <li><a href="#">사이트맵</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="http://trenddevice2023.dothome.co.kr/TDsite/php/notice/noticeView.php?blogId=8&nTitle=%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EB%B0%A9%EC%B9%A8">개인정보처리방침</a></li>
                     <li><a href="../surpport/surpport.php">고객센터</a></li>
-                    <li><a href="../mypage/memberDelete.php"></a>회원탈퇴</li>
                 </ul>
             </div>
             <div class="fb__right">
                 <span>
-                    <a href="#"><img src="../../assets/img/figma.png" alt="피그마"></a>
+                    <a href="https://www.figma.com/file/OJQy83tbMpYRMV2rLjg2fL/%EA%B0%9C%EC%9D%B8%EC%9E%91%EC%97%85?type=design&node-id=85%3A940&mode=design&t=W4246mQ4ZpOEVkQR-1" target="_black"><img src="../../assets/img/figma.png" alt="피그마"></a>
                 </span>
                 <span>
-                    <a href="#"><img src="../../assets/img/github__icon.png" alt="깃허브"></a>
+                    <a href="https://github.com/yunyoungsik/Trend-Device" target="_black"><img src="../../assets/img/github__icon.png" alt="깃허브"></a>
                 </span>
             </div>
         </div>

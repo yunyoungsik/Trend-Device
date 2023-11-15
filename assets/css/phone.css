@@ -182,7 +182,7 @@
     }
 
     .phoneOption li .text p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .phoneOption li .text span {
@@ -379,7 +379,7 @@
 .phoneView__top__right #LikeButton svg {
     width: 1.5rem;
     cursor: pointer;
-    fill: var(--red);
+    fill: var(--black400);
     margin-top: 1rem;
 }
 
@@ -422,6 +422,11 @@
 .phoneView__table .phoneView__table__Option li .text p {
     font-size: 1.5rem;
     font-weight: 900;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
 }
 
 .phoneView__table .phoneView__table__Option li .text span {

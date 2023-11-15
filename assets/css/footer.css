@@ -77,16 +77,22 @@
 .footer__bottom .fb__left ul:first-child li:hover {
     text-decoration: none;
 }
-
+.fb__right {
+    display: flex;
+}
 .footer__bottom .fb__right span {
     width: 50px;
     height: 50px;
+    margin-left: 1rem;
 }
-
+.footer__bottom a {
+    display: block;
+    
+}
 .footer__bottom img {
     width: 50px;
     height: 50px;
-    margin-left: 10px;
+    
     cursor: pointer;
 }
 
@@ -145,6 +151,10 @@
 }
 
 @media(max-width: 600px) {
+    .footer__bottom .fb__right {
+        align-items: center;
+        justify-content: center;
+    }
     .footer__top {
         display: none;
     }

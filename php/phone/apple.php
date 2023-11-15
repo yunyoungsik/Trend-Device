@@ -88,7 +88,7 @@
                                 <h3>iPhone15 Pro</h3>
                                 <p>티타늄. 초강력. 초경량. 초프로</p>
                                 <span>10월 13일 출시</span>
-                                <a href="http://trenddevice2023.dothome.co.kr/TDsite/php/phone/phoneView.php?phoneId=39&category=%EC%83%81%ED%92%88%EA%B2%8C%EC%8B%9C%ED%8C%90">더 알아보기></a>
+                                <a href="http://trenddevice2023.dothome.co.kr/TDsite/php/phone/phoneView.php?phoneId=38&category=%EC%83%81%ED%92%88%EA%B2%8C%EC%8B%9C%ED%8C%90">더 알아보기></a>
                             </div>
                         </li>
                     </ul>

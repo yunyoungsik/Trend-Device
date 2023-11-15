@@ -56,7 +56,9 @@
                 <div class="mypage__contents">
                     <div class="mypage__menu">
                         <div class="mypageMenu__header">
-                            <img src="../../assets/memberimg/<?= !empty($membersInfo['youImgFile']) ? $membersInfo['youImgFile'] : 'icon__profile.png' ?>" alt="<?= $membersInfo['youName']?>의 프로필">   
+                        <div class="mypageMenu__header__img">
+                                <img src="../../assets/memberimg/<?= !empty($membersInfo['youImgFile']) ? $membersInfo['youImgFile'] : 'icon__profile.png' ?>" alt="<?= $membersInfo['youName']?>의 프로필">
+                            </div>
                             <h2><?= $youName ?></h2>
                             <p><?= $membersInfo['youEmail']?></p>
                         </div>

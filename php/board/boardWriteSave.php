@@ -12,9 +12,12 @@
 
     $memberId =  $_SESSION['memberID'];
     $boardAuthor = $_SESSION['youName'];
+
+    $pCategory = $_POST['phone_select2'];
     
     $boardCategory = $_POST['boardCategory'];
     $boardTitle = $_POST['boardTitle'];
+    $boardTitle2 = $_POST['boardTitle2'];
     $boardContents = nl2br($_POST['boardContents']);
 
     $boardView = 0;
@@ -40,27 +43,50 @@
         echo "<script>window.history.back()</script>";
         return false;
     } else {   
-        if($boardImgType){
-            $fileTypeExtension = explode("/", $boardImgType);
-            $fileType = $fileTypeExtension[0];  //image
-            $fileExtension = $fileTypeExtension[1];  //jpeg
-
-            // 이미지 타입 확인
-            if($fileType === "image"){
-                if($fileExtension === "jpg" || $fileExtension === "jpeg" || $fileExtension === "png" || $fileExtension === "gif" || $fileExtension === "webp"){
-                    $boardImgDir = "../../assets/boardimg/";
-                    $boardImgName = "Img_".time().rand(1, 99999)."."."{$fileExtension}";
-                    $sql = "INSERT INTO FBoard(memberID, fTitle, fContents, fCategory, fAuthor, fRegTime, fView, fLike, fImgFile, fImgSize, fDelete) VALUES('$memberId', '$boardTitle',  '$boardContents', '$boardCategory', '$boardAuthor', '$boardRegTime', '$boardView', '$boardLike', '$boardImgName', '$boardImgSize', '$boardDelete');";
-                    $result = move_uploaded_file($boardImgTmp, $boardImgDir.$boardImgName);
+        if($boardTitle2){
+            if($boardImgType){
+                $fileTypeExtension = explode("/", $boardImgType);
+                $fileType = $fileTypeExtension[0];  //image
+                $fileExtension = $fileTypeExtension[1];  //jpeg
+    
+                // 이미지 타입 확인
+                if($fileType === "image"){
+                    if($fileExtension === "jpg" || $fileExtension === "jpeg" || $fileExtension === "png" || $fileExtension === "gif" || $fileExtension === "webp"){
+                        $boardImgDir = "../../assets/boardimg/";
+                        $boardImgName = "Img_".time().rand(1, 99999)."."."{$fileExtension}";
+                        $sql = "INSERT INTO FBoard(memberID, fTitle, fContents, fCategory, fAuthor, fRegTime, fView, fLike, fImgFile, fImgSize, fDelete) VALUES('$memberId', '$boardTitle VS $boardTitle2',  '$boardContents', '$boardCategory', '$boardAuthor', '$boardRegTime', '$boardView', '$boardLike', '$boardImgName', '$boardImgSize', '$boardDelete');";
+                        $result = move_uploaded_file($boardImgTmp, $boardImgDir.$boardImgName);
+                    } else {
+                        echo "<script>alert('이미지 파일 형식이 아닙니다.')</script>";
+                    }
                 } else {
-                    echo "<script>alert('이미지 파일 형식이 아닙니다.')</script>";
+                    echo "<script>alert('이미지 파일이 아닙니다.')</script>";
                 }
-                echo "<script>alert('이미지 파일 형식이 맞습니다.')</script>";
             } else {
-                echo "<script>alert('이미지 파일이 아닙니다.')</script>";
+                $sql = "INSERT INTO FBoard(memberID, fTitle, fContents, fCategory, fAuthor, fRegTime, fView, fLike, fImgFile, fImgSize, fDelete) VALUES('$memberId', '$boardTitle VS $boardTitle2', '$boardContents', '$boardCategory', '$boardAuthor', '$boardRegTime', '$boardView', '$boardLike', 'Img_default.jpg', '$boardImgSize', '$boardDelete');";
             }
         } else {
-            $sql = "INSERT INTO FBoard(memberID, fTitle, fContents, fCategory, fAuthor, fRegTime, fView, fLike, fImgFile, fImgSize, fDelete) VALUES('$memberId', '$boardTitle', '$boardContents', '$boardCategory', '$boardAuthor', '$boardRegTime', '$boardView', '$boardLike', 'Img_default.jpg', '$boardImgSize', '$boardDelete');";
+            if($boardImgType){
+                $fileTypeExtension = explode("/", $boardImgType);
+                $fileType = $fileTypeExtension[0];  //image
+                $fileExtension = $fileTypeExtension[1];  //jpeg
+    
+                // 이미지 타입 확인
+                if($fileType === "image"){
+                    if($fileExtension === "jpg" || $fileExtension === "jpeg" || $fileExtension === "png" || $fileExtension === "gif" || $fileExtension === "webp"){
+                        $boardImgDir = "../../assets/boardimg/";
+                        $boardImgName = "Img_".time().rand(1, 99999)."."."{$fileExtension}";
+                        $sql = "INSERT INTO FBoard(memberID, fTitle, fContents, fCategory, fAuthor, fRegTime, fView, fLike, fImgFile, fImgSize, fDelete) VALUES('$memberId', '$boardTitle',  '$boardContents', '$boardCategory', '$boardAuthor', '$boardRegTime', '$boardView', '$boardLike', '$boardImgName', '$boardImgSize', '$boardDelete');";
+                        $result = move_uploaded_file($boardImgTmp, $boardImgDir.$boardImgName);
+                    } else {
+                        echo "<script>alert('이미지 파일 형식이 아닙니다.')</script>";
+                    }
+                } else {
+                    echo "<script>alert('이미지 파일이 아닙니다.')</script>";
+                }
+            } else {
+                $sql = "INSERT INTO FBoard(memberID, fTitle, fContents, fCategory, fAuthor, fRegTime, fView, fLike, fImgFile, fImgSize, fDelete) VALUES('$memberId', '$boardTitle', '$boardContents', '$boardCategory', '$boardAuthor', '$boardRegTime', '$boardView', '$boardLike', 'Img_default.jpg', '$boardImgSize', '$boardDelete');";
+            }
         }
     }
     // 이미지 사이즈 확인

@@ -94,7 +94,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="trDay" colspan="3">게시일 <em>2023. 10. 11 오전 02:53</em></td>
+                                <td class="trDay" colspan="3">게시일 <em>
+<?php
+    $timestamp = $boardInfo['nRegTime'];
+    $am_pm = date('a', $timestamp);
+    $ampm_str = ($am_pm == 'am') ? '오전' : '오후';
+    echo date('Y. m. d', $timestamp) . ' ' . $ampm_str . ' ' . date('g:i', $timestamp);
+?>
+                                </em></td>
                             </tr>
                         </tbody>
                     </table>

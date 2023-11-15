@@ -9,8 +9,6 @@
 }
 
 #main .intro__inner {
-    width: 100%;
-    height: 840px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -25,20 +23,12 @@
     }
 
     #main .intro__inner {
-        height: 1500px;
-    }
-
-    #main .intro__inner .intro__images {
-        flex-direction: column;
+        margin: 2vh 0;
     }
 
     #main .intro__inner p {
         word-break: keep-all;
         font-size: 1rem !important;
-    }
-
-    .intro__img {
-        width: 213px;
     }
 }
 
@@ -57,11 +47,13 @@
 }
 
 #main .intro__inner .intro__images {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
 }
 
 #main .intro__inner .intro__img {
-    width: 426px;
+    width: 33.333%;
 }
 
 #main .intro__inner .intro__images .intro__img img {
@@ -98,6 +90,17 @@
     line-height: 30px;
 }
 
+@media(max-width: 600px) {
+    #main .intro__inner .intro__images {
+        flex-direction: column;
+        align-items: center;
+        margin: 2vh 0;
+    }
+
+    #main .intro__img span {
+        font-size: 1.5rem;
+    }
+}
 
 
 /* 메인이미지 마우스 효과 */
@@ -441,7 +444,7 @@
 }
 
 #section3 .gsap_item03 img {
-    width: 50%;
+    width: 30%;
 }
 
 #section3 a {

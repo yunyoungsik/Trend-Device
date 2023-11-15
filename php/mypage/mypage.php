@@ -58,7 +58,9 @@
                 <div class="mypage__contents">
                     <div class="mypage__menu">
                         <div class="mypageMenu__header">
-                            <img src="../../assets/memberimg/<?= !empty($membersInfo['youImgFile']) ? $membersInfo['youImgFile'] : 'icon__profile.png' ?>" alt="<?= $membersInfo['youName']?>의 프로필">   
+                            <div class="mypageMenu__header__img">
+                                <img src="../../assets/memberimg/<?= !empty($membersInfo['youImgFile']) ? $membersInfo['youImgFile'] : 'icon__profile.png' ?>" alt="<?= $membersInfo['youName']?>의 프로필">
+                            </div>
                             <h2><?= $youName ?></h2>
                             <p><?= $membersInfo['youEmail']?></p>
                         </div>
@@ -93,7 +95,7 @@
                                     $youPhone = $membersInfo['youPhone']; 
 
                                     $first = substr($youPhone, 0, 3);
-                                    $second = substr($youPhone, 4, 4);
+                                    $second = substr($youPhone, 3, 4);
                                     $third = substr($youPhone, 7, 4);
 
                                     $formattedDate = $first . " - " . $second . " - " . $third ;
@@ -454,7 +456,6 @@
                         data: {
                             "memberID": <?= $memberID ?>,
                             "Birth": $("#Birth").val(),
-                            "ModifyeBirthPass": $("#ModifyeBirthPass").val(),
                         },
                         success: function(data) {
                             console.log(data);

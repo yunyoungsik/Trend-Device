@@ -13,15 +13,19 @@
     text-align: left;
 }
 
-
-.mypageMenu__header img {
-    margin-bottom: 10px;
+.mypageMenu__header .mypageMenu__header__img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-position: center;
-    background-size: cover;
     border: 1px solid rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.mypageMenu__header img {
+    vertical-align: top;
+    width: 100%;
+    object-fit: cover; 
+    object-position: center;
 }
 
 .mypageMenu__header h2 {
@@ -374,7 +378,12 @@ body.disable-scroll {
         margin: 0 auto;
         font-size: 12px;
         word-wrap: break-word;
-
+    }
+    .mypageMenu__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 }
 

@@ -26,7 +26,7 @@
                     <form action="noticeWriteSave.php" name="noticeWriteSave" method="post" enctype="multipart/form-data">
                         <fieldset>
                             <legend class="blind">공지사항 작성하기</legend>
-                            <div class="bw__category">
+                            <div class="bw__category blind">
                                 <label for="noticeCategory">카테고리</label>
                                 <select name="noticeCategory" id="noticeCategory">
                                     <option value="공지사항">공지사항</option>

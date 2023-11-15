@@ -7,6 +7,7 @@
     margin-top: 60px;
 }
 
+
 /* compare__top */
 .compare__top {
     width: 100%;
@@ -22,7 +23,32 @@
 .compare__top p {
     font-weight: 600;
 }
+.compare__top .desc {
+    display: block;
+    margin-bottom: 1vh;
+    font-size: 0.8rem;
+    color: var(--blue100);
+}
 
+.compare__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.compare__btn .compare__minus {
+    margin-right: 1rem;
+}
+.compare__btn .compare__plus,
+.compare__btn .compare__minus {
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 2rem;
+    color: var(--white);    
+    background-color: var(--blue100);
+}
 /* compare__bottom */
 .compare__bottom {
     width: 100%;
@@ -43,6 +69,70 @@
     vertical-align: top;
     display: inline-block;
 }
+
+/* .compare__bottom.column2 */
+.compare__bottom.column2 .compare__center {
+    display: none;
+}
+
+.compare__bottom.column2 .compare__center2 {
+    display: none;
+}
+
+.compare__bottom.column2>div {
+    width: 50%;
+}
+
+.compare__bottom.column2 .phoneOption li {
+    width: 50%;
+}
+
+.compare__bottom.column2 select {
+    width: 50%;
+}
+
+/* compare__bottom column3 */
+.compare__bottom.column3 .compare__center {
+    display: block;
+}
+
+.compare__bottom.column3 .compare__center2 {
+    display: none;
+}
+
+.compare__bottom.column3>div {
+    width: 33.3333%;
+}
+
+.compare__bottom.column3 .phoneOption li {
+    width: 80%;
+}
+
+.compare__bottom.column3 select {
+    width: 80%;
+}
+
+/* compare__bottom column4 */
+.compare__bottom.column4 .compare__center {
+    display: block;
+}
+
+.compare__bottom.column4 .compare__center2 {
+    display: block;
+}
+
+.compare__bottom.column4>div {
+    width: 24%;
+}
+
+.compare__bottom.column4 .phoneOption li {
+    width: 80%;
+}
+
+.compare__bottom.column4 select {
+    width: 80%;
+}
+
 
 .compare__left__top img,
 .compare__right__top img {
@@ -113,4 +203,27 @@ p.price {
 
 .compare__right {
     width: 50%;
+}
+@media(max-width: 1280px){
+    .phoneOption li .text p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; 
+        -webkit-box-orient: vertical;
+    }
+}
+
+@media(max-width: 700px){
+    .compare__btn,
+    .compare__top .desc {
+        display: none;
+    }
+    .compare__bottom.column2 select,
+    .compare__bottom.column2 .phoneOption li {
+        width: 90%;
+    }
+    .compare__inner .btn__style3 {
+        width: 90%;
+    }
 }

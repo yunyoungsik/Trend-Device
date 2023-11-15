@@ -49,25 +49,29 @@
 
                 <div class="intro__images">
                     <div class="intro__img">
-                        <img src="../../assets/img/icon__compare.png" alt="스마트폰 비교하기">
-                        <span>비교하기</span>
+                        <a href="../phone/compare.php"><img src="../../assets/img/icon__compare.png" alt="스마트폰 비교하기"></a>
+                        <span><a href="../phone/compare.php">비교하기</a></span>
                     </div>
                     <div class="intro__img">
                         <a href="../join/join.php"><img src="../../assets/img/icon__join.png" alt="회원가입"></a>
                         <span><a href="../join/join.php">회원가입</a></span>
                     </div>
                     <div class="intro__img">
-                        <img src="../../assets/img/icon__comunity.png" alt="커뮤니티">
-                        <span>커뮤니티</span>
+                        <a href="http://trenddevice2023.dothome.co.kr/TDsite/php/board/boardCate.php?category=%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90"><img src="../../assets/img/icon__comunity.png" alt="커뮤니티"></a>
+                        <span><a href="http://trenddevice2023.dothome.co.kr/TDsite/php/board/boardCate.php?category=%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90">커뮤니티</a></span>
                     </div>
                 </div>
                 <!-- //intro__img -->
 
                 <div class="intro__footer">
-                    <span>이미 회원이신가요?</span>
-                    <div class="intro__btn">
-                        <a href="../login/login.php">로그인</a>
-                    </div>
+                    <?php
+                    if(!isset($_SESSION['memberID'])){
+                        echo "<span>이미 회원이신가요?</span>";
+                        echo "<div class='intro__btn'><a href='../login/login.php'>로그인</a></div>";
+                    } else {
+                        echo "<span></span>";
+                    }
+                    ?>
                 </div>
                 <!-- //intro__footer -->
             </div>

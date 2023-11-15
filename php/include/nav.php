@@ -15,6 +15,7 @@
                 <ul class="submenu">
                     <li><a href="../notice/notice.php">공지사항</a></li>
                     <li><a href="../board/boardCate.php?category=자유게시판">자유게시판</a></li>
+                    <li><a href="../board/boardCate.php?category=토론게시판">토론게시판</a></li>
                 </ul>
             </li>
             <li>
