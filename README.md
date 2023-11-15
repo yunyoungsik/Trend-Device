@@ -8,7 +8,7 @@ Trend Device는 소비자들이 다양한 스마트폰 모델을 비교하고 �
 |윤영식|서유진|김우주|
 |:---:|:---:|:---:|
 |<img width="150px" src="https://avatars.githubusercontent.com/u/144635640?v=4" />|<img width="150px" src="https://avatars.githubusercontent.com/u/144635615?v=4">|<img width="150px" src="https://avatars.githubusercontent.com/u/144635615?v=4">|
-|[@GIT](https://github.com/yunyoungsik/)|[@GIT](https://github.com/)|[@GIT](https://github.com/rlanrid)|
+|[@GIT](https://github.com/yunyoungsik/)|[@GIT](#)|[@GIT](https://github.com/rlanrid)|
 
 ## 프로젝트소개
 <p>
