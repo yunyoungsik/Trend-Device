@@ -2,6 +2,12 @@
     include "../connect/connect.php";
     include "../connect/session.php";
 
+    if(isset($_SESSION['memberID'])){
+        $memberId = $_SESSION['memberID'];
+    } else {
+        $memberId = -1;
+    }
+
     $boardSql = "SELECT * FROM NBoard WHERE nDelete = 1 ORDER BY blogId DESC";
     $NboardInfo = $connect -> query($boardSql);
 

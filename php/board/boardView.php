@@ -282,9 +282,9 @@
         <div id="popupDelete" class="none">
             <div class="comment__delete">
                 <h4>댓글 삭제</h4>
-                <label for="commentPass" class="blind">비밀번호</label>
-                <input type="password" id="commentDeletePass" name="commentDeletePass" placeholder="비밀번호">
-                <p>* 입력했던 비밀번호를 입력해주세요!</p>
+                <!-- <label for="commentPass" class="blind">비밀번호</label> -->
+                <!-- <input type="password" id="commentDeletePass" name="commentDeletePass" placeholder="비밀번호">
+                <p>* 입력했던 비밀번호를 입력해주세요!</p> -->
                 <div class="btn">
                     <button id="commentDeleteCancle">취소</button>
                     <button id="commentDeleteButton">삭제</button>
@@ -297,8 +297,8 @@
                 <h4>댓글 수정</h4>
                 <label for="commentModifyMsg" class="blind">비밀번호</label>
                 <textarea name="commentModifyMsg" id="commentModifyMsg" rows="4" placeholder="수정할 내용을 적어주세요!"></textarea>
-                <input type="password" id="commentModifyPass" name="commentModifyPass" placeholder="비밀번호">
-                <p>* 입력했던 비밀번호를 입력해주세요!</p>
+                <!-- <input type="password" id="commentModifyPass" name="commentModifyPass" placeholder="비밀번호">
+                <p>* 입력했던 비밀번호를 입력해주세요!</p> -->
                 <div class="btn">
                     <button id="commentModifyCancle">취소</button>
                     <button id="commentModifyButton">수정</button>
@@ -355,23 +355,7 @@
             commentId = $(this).data("comment-id");
             commentMemberId = $(this).data("member-id");
             if(commentMemberId === memberId){
-                $("#popupDelete").removeClass("none");
-            } else {
-                alert("자신이 작성한 댓글만 삭제 가능합니다.");
-            }
-        });
-
-        // 댓글 삭제 버튼 --> 취소 버튼
-        $("#commentDeleteCancle").click(function(){
-            $("#popupDelete").addClass("none");
-        });
-
-        // 댓글 삭제 버튼 --> 삭제 버튼
-        $("#commentDeleteButton").click(function(){
-            if($("#commentDeletePass").val() == ""){
-                alert("비밀번호를 작성해주세요!");
-                $("#commentDeletePass").focus();
-            } else {
+                // $("#popupDelete").removeClass("none");
                 $.ajax({
                     url: "boardCommentDelete.php",
                     method: "POST",
@@ -396,8 +380,60 @@
                         console.log("error" + error);
                     }
                 })
+            } else {
+                alert("자신이 작성한 댓글만 삭제 가능합니다.");
             }
         });
+
+        // // 댓글 삭제 버튼
+        // $(".comment__view .delete").click(function(e){
+        //     e.preventDefault();
+        //     commentId = $(this).data("comment-id");
+        //     commentMemberId = $(this).data("member-id");
+        //     if(commentMemberId === memberId){
+        //         $("#popupDelete").removeClass("none");
+        //     } else {
+        //         alert("자신이 작성한 댓글만 삭제 가능합니다.");
+        //     }
+        // });
+
+        // // 댓글 삭제 버튼 --> 취소 버튼
+        // $("#commentDeleteCancle").click(function(){
+        //     $("#popupDelete").addClass("none");
+        // });
+
+        // // 댓글 삭제 버튼 --> 삭제 버튼
+        // $("#commentDeleteButton").click(function(){
+        //     if($("#commentDeletePass").val() == ""){
+        //         alert("비밀번호를 작성해주세요!");
+        //         $("#commentDeletePass").focus();
+        //     } else {
+        //         $.ajax({
+        //             url: "boardCommentDelete.php",
+        //             method: "POST",
+        //             dataType: "json",
+        //             data: {
+        //                 "memberId": memberId,
+        //                 "commentPass": $("#commentDeletePass").val(),
+        //                 "commentId": commentId,
+        //             },
+        //             success: function(data){
+        //                 console.log(data);
+        //                 if(data.result == "bad"){
+        //                     alert("비밀번호가 일치하지 않습니다.");
+        //                 } else {
+        //                     alert("댓글이 삭제되었습니다.");
+        //                 }
+        //                 location.reload();
+        //             },
+        //             error: function(request, status, error){
+        //                 console.log("request" + request);
+        //                 console.log("status" + status);
+        //                 console.log("error" + error);
+        //             }
+        //         })
+        //     }
+        // });
 
         // 댓글 수정 버튼
         $(".comment__view .modify").click(function(e){
@@ -422,23 +458,20 @@
 
         // 댓글 수정 버튼 --> 수정 버튼
         $("#commentModifyButton").click(function(){
-            if($("#commentModifyPass").val() == ""){
-                alert("댓글 작성시 비밀번호를 작성해주세요!");
-                $("#commentModifyPass").focus();
-            } else {
+
                 $.ajax({
                     url: "boardCommentModify.php",
                     method: "POST",
                     dataType: "json",
                     data: {
                         "commentMsg": $("#commentModifyMsg").val(),
-                        "commentPass": $("#commentModifyPass").val(),
+                        // "commentPass": $("#commentModifyPass").val(),
                         "commentId": commentId,
                     },
                     success: function(data){
                         console.log(data);
                         if(data.result == "bad"){
-                            alert("비밀번호가 일치하지 않습니다.");
+                            alert("Error.");
                         } else {
                             alert("댓글이 수정되었습니다.");
                         }
@@ -450,7 +483,36 @@
                         console.log("error" + error);
                     }
                 })
-            }
+
+            // if($("#commentModifyPass").val() == ""){
+            //     alert("댓글 작성시 비밀번호를 작성해주세요!");
+            //     $("#commentModifyPass").focus();
+            // } else {
+            //     $.ajax({
+            //         url: "boardCommentModify.php",
+            //         method: "POST",
+            //         dataType: "json",
+            //         data: {
+            //             "commentMsg": $("#commentModifyMsg").val(),
+            //             "commentPass": $("#commentModifyPass").val(),
+            //             "commentId": commentId,
+            //         },
+            //         success: function(data){
+            //             console.log(data);
+            //             if(data.result == "bad"){
+            //                 alert("비밀번호가 일치하지 않습니다.");
+            //             } else {
+            //                 alert("댓글이 수정되었습니다.");
+            //             }
+            //             location.reload();
+            //         },
+            //         error: function(request, status, error){
+            //             console.log("request" + request);
+            //             console.log("status" + status);
+            //             console.log("error" + error);
+            //         }
+            //     })
+            // }
         });
 
         // 공감버튼

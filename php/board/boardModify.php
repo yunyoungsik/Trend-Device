@@ -100,7 +100,7 @@
     </div>
     <?php } else { ?>
         <div class="bw__boardTitle__input">
-            <input type="text" id="boardTitle" name="boardTitle" class="input__style">
+            <input type="text" id="boardTitle" name="boardTitle" class="input__style" value="<?=$info['fTitle']?>">
         </div>
     <?php }
 ?>

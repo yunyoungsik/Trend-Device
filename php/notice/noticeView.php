@@ -2,12 +2,17 @@
     include "../connect/connect.php";
     include "../connect/session.php";
 
+    if(isset($_SESSION['memberID'])){
+        $memberId = $_SESSION['memberID'];
+    } else {
+        $memberId = -1;
+    }
+
     if(isset($_GET['blogId'])){
         $blogId = $_GET['blogId'];
     } else {
         Header("Location: notice.php");
     }
-
 
     // 전체 게시물 수 가져오기
     $pageSql = "SELECT * FROM NBoard WHERE nDelete = 1";
@@ -41,6 +46,8 @@
     $nextBoardResult = $connect -> query($nextBoardSql);
     $nextBoardInfo = $nextBoardResult -> fetch_array(MYSQLI_ASSOC);
 
+    // 게시글 작성자와 로그인한 사용자를 비교하여 해당 버튼을 출력하거나 숨깁니다.
+    $isPostOwner = ($boardInfo['memberID'] === $memberId);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -108,8 +115,10 @@
                 </div>
                 <div class="board__btns">
                     <a href="notice.php" class="btn__style2">목록</a>
-                    <a href="noticeModify.php?blogId=<?=$_GET['blogId']?>" class="btn__style2">수정하기</a>
-                    <a href="noticeDelete.php?blogId=<?=$_GET['blogId']?>" class="btn__style2" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+<?php if ($isPostOwner) { ?>
+    <a href="noticeModify.php?blogId=<?=$_GET['blogId']?>" class="btn__style2">수정하기</a>
+    <a href="noticeDelete.php?blogId=<?=$_GET['blogId']?>" class="btn__style2" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
+<?php } ?>   
                 </div>
                 <div class="board__pages2">
                     <ul>
