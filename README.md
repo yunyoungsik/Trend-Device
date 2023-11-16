@@ -54,6 +54,6 @@ Trend Device는 스마트폰을 구매하고자 하는 모든 사용자들에게
 </div>
 
 ## 작업과정
-[작업과정](http://trenddevice2023.dothome.co.kr/TDsite/index.html)
+[작업과정](http://trenddevice2023.dothome.co.kr/TDsite/html_index.html)
 
 
