@@ -42,6 +42,36 @@ Trend Device는 스마트폰을 구매하고자 하는 모든 사용자들에게
 2. 상품페이지 :
 3. 
 
+### 트러블슈팅
+[문제] 비교 페이지에 처음 접속했을 때 'a'와 'img' 요소에 초기값이 없어서 문제가 발생했습니다.   
+   
+[해결방법]
+처음 접속 시에는 초기값이 없는 상태에서 비교 페이지에 들어가면서 'a'와 'img' 요소에 데이터를 추가해야 했습니다.   
+아래는 이를 해결하기 위해 JavaScript로 구현한 부분입니다.   
+```js
+if (selectedPhone) {
+ const link = document.createElement('a');
+ link.href = `${selectedPhone.pLink}`;
+ link.className = 'btn__style3';
+ link.innerText = '바로가기';
+ link.target = '_black';
+ const linkContainer = document.querySelector('.pLink1');
+ linkContainer.innerHTML = '';
+ linkContainer.appendChild(link);
+}
+
+if (selectedPhone) {
+ const img = document.createElement('img');
+ img.src = `../../assets/phoneimg/${selectedPhone.pImgFile}`;
+ img.alt = `${selectedPhone.pTitle}`;
+ const imageContainer = document.querySelector('.pImgFile1');
+ imageContainer.innerHTML = '';
+ imageContainer.appendChild(img);
+}
+```
+이 코드는 선택된 핸드폰 정보가 있을 때만 실행되며, 해당 정보를 바탕으로 'a' 요소와 'img' 요소를 생성하여 초기화된 상태의 컨테이너에 추가하는 방식으로 문제를 해결했습니다.   
+이렇게 하면 페이지가 처음 로드될 때 초기값이 없어 발생하는 문제를 방지할 수 있습니다.   
+
 ## 스택
 <div disflay="flex" flex-direction:column; align-items:flex-start;>
   <p><strong>Environment</strong></p>
