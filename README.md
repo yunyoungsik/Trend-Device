@@ -1,4 +1,5 @@
 # Trend-Device
+<img width="100%" src="https://github.com/yunyoungsik/Trend-Device/blob/main/assets/img/thumbnail.jpg?raw=true" />
 Trend Device는 직관적이고 사용하기 편리한 인터페이스를 제공하여 사용자가 원하는 휴대폰 모델을 선택하고, 선택한 모델들을 한눈에 비교할 수 있도록 합니다.
 
 각 휴대폰 모델에는 사진, 기술 사양, 가격 등의 정보가 제공되어 사용자가 원하는 정보를 쉽게 찾을 수 있습니다.
